@@ -12,13 +12,14 @@
 //The only additional data included was a raster template for exporting and a list of all the forest type groups per ecoregions, which is
 //publicly available as the asset ee.FeatureCollection("users/patrickmnorman/Forest_and_ecoregion_for_GEE_table")
 
+//The conus forest type group raster can be downloaded from https://data.fs.usda.gov/geodata/rastergateway/forest_type/
 //----------------------------------------------------------------------------------------------------------------------------------------
 //Loading in each of the datasets
 var Tree_cover = ee.Image("UMD/hansen/global_forest_change_2020_v1_8"),
     Tree_height = ee.ImageCollection("users/potapovpeter/GEDI_V27"),
     Above_ground_biomass = ee.Image("users/carlycampbell/gbf_biomass"),
     L3_ecoregions = ee.FeatureCollection("users/patrickmnorman/us_eco_l3_projected"),
-    forest_groups = ee.Image("users/patrickmnorman/conus_forest_group_carlys"),
+    forest_groups = ee.Image("users/patrickmnorman/conus_forest_type_group_raster"),
     forest_group_by_ecoregion_table = ee.FeatureCollection("users/patrickmnorman/Forest_and_ecoregion_for_GEE_table"),
     export_area = 
     ee.Geometry.Polygon(
